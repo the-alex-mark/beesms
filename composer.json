@@ -1,0 +1,11 @@
+{
+    "name": "the_alex_mark/beesms",
+    "version": "1.6",
+    "description": "Класс предназначен для отправки СМС",
+    "minimum-stability": "stable",
+    "autoload": {
+        "files": [
+            "./src/BEESMS.php"
+        ]
+    }
+}
