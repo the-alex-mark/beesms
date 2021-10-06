@@ -130,13 +130,13 @@ class BEESMS {
             do {
                 $header.= fgets($fp, 4096);
             } while (strpos($header,"\r\n\r\n")===false);
-            if(get_magic_quotes_runtime())	$header=$this->decode_header(stripslashes($header));
+            if(version_compare(PHP_VERSION, '7.4.0') < 0 && get_magic_quotes_runtime())	$header=$this->decode_header(stripslashes($header));
             else							$header=$this->decode_header($header);
 
             $body='';
             while (!feof($fp))
                 $body.=fread($fp,8192);
-            if(get_magic_quotes_runtime())	$body=$this->decode_body($header, stripslashes($body));
+            if(version_compare(PHP_VERSION, '7.4.0') < 0 && get_magic_quotes_runtime())	$body=$this->decode_body($header, stripslashes($body));
             else							$body=$this->decode_body($header, $body);
 
             fclose($fp);
