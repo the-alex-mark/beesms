@@ -2,6 +2,8 @@
     "name": "the_alex_mark/beesms",
     "version": "1.6",
     "description": "Класс предназначен для отправки СМС",
+    "type": "library",
+    "keywords": [ "sms", "beeline" ],
     "minimum-stability": "stable",
     "autoload": {
         "files": [
